@@ -1,0 +1,1 @@
+python text2svm.py -P 2 ~/experiments/CRP-expenditures_learn-type-codes/data/labeled/train/expends2012.description.sorted
