@@ -17,3 +17,4 @@ UNLABELED="$UNLABELED_DIR/expends2012.$DIMENSION.unlabeled.csv"
 grep -v -P "^\?" $ALL | sort > $TRAIN
 grep -v -P "^\?" $ALL | sort | uniq > $TEST
 grep -P "^\?" $ALL | sort | uniq > $UNLABELED
+
