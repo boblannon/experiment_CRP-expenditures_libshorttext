@@ -1,0 +1,7 @@
+(epd)blannon@monster:~/src/libshorttext-1.0$ python text-train.py -P /home/blannon/experiments/CRP-
+expenditures_learn-type-codes/data/expends2012.sorted.labeled.csv.text_converter /home/blannon/expe
+riments/CRP-expenditures_learn-type-codes/data/expends2012.sorted.labeled.csv.svm
+*.*..*.*.*
+optimization finished, #iter = 51
+Objective value = -5086396.653973
+nSV = 38497797

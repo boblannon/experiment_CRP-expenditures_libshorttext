@@ -1,0 +1,4 @@
+(epd)blannon@monster:~/src/libshorttext-1.0$ python text-predict.py ~/experiments/CRP-expenditures_
+learn-type-codes/data/expends2012.sorted.labeled.uniq.csv expends2012.sorted.labeled.csv.svm.model 
+~/experiments/CRP-expenditures_learn-type-codes/test/test_uniq_results
+Accuracy = 67.8950% (177521/261464)

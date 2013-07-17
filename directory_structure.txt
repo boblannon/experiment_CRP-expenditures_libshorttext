@@ -1,0 +1,41 @@
+.
+├── ./converters
+│   └── ./converters/expends2012.sorted.labeled.csv.text_converter
+│       ├── ./converters/expends2012.sorted.labeled.csv.text_converter/class_map.config.pickle
+│       ├── ./converters/expends2012.sorted.labeled.csv.text_converter/feat_gen.config.pickle
+│       └── ./converters/expends2012.sorted.labeled.csv.text_converter/text_prep.config.pickle
+├── ./data
+│   ├── ./data/clean
+│   │   └── ./data/clean/expends2012.all.description.csv
+│   ├── ./data/labeled
+│   │   ├── ./data/labeled/test
+│   │   │   ├── ./data/labeled/test/expends2012.description.sorted.labeled.uniq.csv
+│   │   │   └── ./data/labeled/test/expends2012.description.sorted.labeled.uniq.csv.svm
+│   │   └── ./data/labeled/train
+│   │       ├── ./data/labeled/train/expends2012.description.sorted.labeled.csv
+│   │       └── ./data/labeled/train/expends2012.description.sorted.labeled.csv.svm
+│   ├── ./data/raw
+│   │   └── ./data/raw/expends2012.unix.w-headers.csv
+│   └── ./data/unlabeled
+│       └── ./data/unlabeled/expends2012.sorted.unlabeled.uniq.csv
+├── ./directory_structure.txt
+├── ./log
+│   ├── ./log/test.log
+│   └── ./log/train.log
+├── ./models
+│   └── ./models/expends2012.sorted.labeled.csv.svm.model
+│       ├── ./models/expends2012.sorted.labeled.csv.svm.model/converter
+│       │   ├── ./models/expends2012.sorted.labeled.csv.svm.model/converter/class_map.config.pickle
+│       │   ├── ./models/expends2012.sorted.labeled.csv.svm.model/converter/feat_gen.config.pickle
+│       │   └── ./models/expends2012.sorted.labeled.csv.svm.model/converter/text_prep.config.pickle
+│       ├── ./models/expends2012.sorted.labeled.csv.svm.model/id
+│       └── ./models/expends2012.sorted.labeled.csv.svm.model/learner
+│           ├── ./models/expends2012.sorted.labeled.csv.svm.model/learner/idf.pickle
+│           ├── ./models/expends2012.sorted.labeled.csv.svm.model/learner/liblinear_model
+│           └── ./models/expends2012.sorted.labeled.csv.svm.model/learner/options.pickle
+├── ./results
+│   └── ./results/expends2012.sorted.labeled.uniq.csv.results
+└── ./scripts
+    └── ./scripts/make_all_descriptions.py
+
+16 directories, 22 files
