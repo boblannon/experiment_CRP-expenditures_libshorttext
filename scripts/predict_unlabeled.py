@@ -22,11 +22,9 @@ for d in data:
         descrip = d['descrip']
     else:
         descrip = ''
-    try:
-        descrip = str(descrip)
-    except UnicodeEncodeError:
-        descrip = descrip.decode('utf-8').encode('ascii','ignore')
+    descrip = descrip.decode('utf-8').encode('ascii','ignore')
     r = predict_single_text(descrip,mod)
+    d['descrip'] = descrip
     d['guess'] = r.predicted_y
     out.writerow(d)
 
