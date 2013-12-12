@@ -22,7 +22,7 @@ TEST_DIR = os.path.join(DATA_DIR, 'labeled', 'test')
 CONVERTER_DIR = os.path.join(BASE_DIR, 'converters')
 MODEL_DIR = os.path.join(BASE_DIR, 'models')
 RESULT_DIR = os.path.join(BASE_DIR, 'results')
-SETTINGS_DIR = os.path.join(BASE_DIR, 'settings')
+OPTIONS_DIR = os.path.join(BASE_DIR, 'options')
 
 train_csv = os.path.join(CLEAN_DIR, project_name + '_train.csv')
 test_csv = os.path.join(CLEAN_DIR, project_name + '_test.csv')
@@ -30,7 +30,7 @@ test_csv = os.path.join(CLEAN_DIR, project_name + '_test.csv')
 train_svm = os.path.join(TRAIN_DIR, project_name + '_train.svm')
 test_svm = os.path.join(TEST_DIR, project_name + '_test.svm')
 
-settings_json = os.path.join(SETTINGS_DIR, project_name + '_settings.json')
+options_json = os.path.join(OPTIONS_DIR, project_name + '_options.json')
         
 converter_path = os.path.join(CONVERTER_DIR, project_name + '.converter')
 
@@ -62,7 +62,7 @@ def make_options():
     return options
 
 make_dirs([DATA_DIR, CLEAN_DIR, TRAIN_DIR, TEST_DIR, MODEL_DIR, RESULT_DIR, 
-            SETTINGS_DIR, CONVERTER_DIR])
+            OPTIONS_DIR, CONVERTER_DIR])
 
 options = make_options()
 
