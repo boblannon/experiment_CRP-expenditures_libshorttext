@@ -2,6 +2,7 @@ import sys
 import os
 import csv
 import json
+import time
 
 import numpy as np
 import pandas as pd
@@ -13,7 +14,6 @@ import local_settings as ls
 
 project_name = ls.project_name
 BASE_DIR = ls.BASE_DIR
-
 
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 CLEAN_DIR = os.path.join(DATA_DIR, 'clean')
@@ -61,12 +61,16 @@ def make_options():
     json.dump(options, open(options_json, 'w'), indent=2)
     return options
 
+sys.stderr.write('making dirs\n')
 make_dirs([DATA_DIR, CLEAN_DIR, TRAIN_DIR, TEST_DIR, MODEL_DIR, RESULT_DIR, 
             OPTIONS_DIR, CONVERTER_DIR])
 
+sys.stderr.write('making options\n')
 options = make_options()
 
 if not os.path.exists(converter_path):
+    sys.stderr.write('no converter. making one\n')
+    start_time = time.time()
     # Make text processor
     tp_option_str = "-stopword {stopword} -stemming {stemming}".format(**options)
     text_processor = TextPreprocessor(option=tp_option_str)
@@ -82,18 +86,28 @@ if not os.path.exists(converter_path):
 
     # Convert Text
     convert_text(train_csv, text_converter, train_svm)
+    sys.stderr.write('...converter making took {} seconds\n'.format(time.time() - start_time))
 
     # Save Converter
     text_converter.save(converter_path)
+    sys.stderr.write('...converter saved to {}\n'.format(converter_path))
 else:
+    sys.stderr.write('found saved converter at {}\n'.format(converter_path))
     text_converter = Text2svmConverter()
     text_converter.load(converter_path)
 
 if not os.path.exists(model_path):
+    sys.stderr.write('no model. training one\n')
+    start_time = time.time()
     text_model = train_converted_text(train_svm, text_converter)
+    sys.stderr.write('...training took {} seconds\n'.format(time.time() - start_time))
     text_model.save(model_path)
+    sys.stderr.write('...model saved to {}\n'.format(model_path))
 else:
+    sys.stderr.write('found saved model at {}\n'.format(model_path))
     text_model = TextModel(model_path)
+
+sys.stderr.write('testing... \n'.format(converter_path))
 
 prediction_result = predict_text(test_csv, text_model)
 prediction_result.save(result_path, analyzable=True)
