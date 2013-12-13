@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 from libshorttext.converter import Text2svmConverter, FeatureGenerator, TextPreprocessor, convert_text
-from libshorttext.classifier import train_converted_text, predict_text
+from libshorttext.classifier import TextModel, train_converted_text, predict_text
 
 import local_settings as ls
 
