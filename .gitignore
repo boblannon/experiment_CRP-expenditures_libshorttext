@@ -4,3 +4,4 @@
 *.pyo
 *.swp
 results
+local_settings*

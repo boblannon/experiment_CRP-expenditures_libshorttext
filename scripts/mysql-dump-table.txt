@@ -1,0 +1,1 @@
+blannon@smokehouse:~$ mysqldump -u blannon -p --fields-terminated-by=',' --fields-optionally-enclosed-by='"' --fields-escaped-by='\\' --lines-terminated-by='\n' --tab=/tmp Consultants crp_expenditures_nov4
